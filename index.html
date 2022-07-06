@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sara Blodgett</title>
+    <script>
+        var sounds = false;
+        setTimeout(() => {
+            const main = document.querySelector('main')
+            main.style.opacity = 1
+            main.style.filter = 'blur(0px)'
+        }, 1000)
+        
+        function toggleMute() {
+            var video = document.getElementById("vid");
+            video.muted = !video.muted;
+            if (sounds === true) {
+                document.getElementById("soundstat").src = "./images/mute.png"
+            } else {
+                document.getElementById("soundstat").src = "./images/unmute.png"
+            }
+            sounds = !sounds;
+        }
+    </script>
+</head>
+<body>
+    <video id="vid" autoplay muted loop playsinline>
+        <source src="Hawaii.mp4" type="video/mp4">
+    </video>
+    <main>
+        <header>
+            <img src="./images/pfp.jpg" />
+            <h1>@sarablodgett</h1>
+        </header>
+        <ul>
+            <li>
+                <a href="https://instagram.com/">
+                    <img src="./images/instagram.png" alt="Instagram" width="20" />
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/">
+                    <img src="./images/twitter.png" alt="Twitter" width="20" />
+                    Twitter
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com">
+                    <img src="./images/linkedin.png" alt="LinkedIn" width="20" />
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com">
+                    <img src="./images/github.png" alt="Github" width="20" />
+                    How It's Made
+                </a>
+            </li>
+            <li class="audio" type="button" id="mute" onclick="toggleMute()">
+                <img id="soundstat" src="./images/mute.png" alt="Sound" width="20" />
+
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
